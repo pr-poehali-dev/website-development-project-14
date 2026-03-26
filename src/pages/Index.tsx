@@ -66,36 +66,42 @@ const team = [
     role: "Дифференциальный диагност, логопед-дефектолог высшей категории",
     badge: "★ Мастер коррекционной педагогики-2025",
     img: TEAM_IMG,
+    scheduleIndex: 0,
   },
   {
     name: "Лосева Виктория Александровна",
     role: "Клинический психолог, специалист по сенсорной интеграции",
     badge: null,
     img: CLASS_IMG,
+    scheduleIndex: 1,
   },
   {
     name: "Синенкова Елена Валерьевна",
     role: "Дефектолог, магистр",
     badge: "27 лет опыта",
     img: TEAM_IMG,
+    scheduleIndex: 2,
   },
   {
     name: "Анисимова Татьяна Григорьевна",
     role: "АВА-терапист, специалист по запуску речи",
     badge: null,
     img: CLASS_IMG,
+    scheduleIndex: 3,
   },
   {
     name: "Моисеева Людмила Мидхатовна",
     role: "Логопед-дефектолог",
     badge: "40 лет опыта · Награда Министерства образования",
     img: TEAM_IMG,
+    scheduleIndex: 4,
   },
   {
     name: "Стельмах Елена Александровна",
     role: "Магистр психологии, практикующий психолог, сказкотерапевт",
     badge: null,
     img: CLASS_IMG,
+    scheduleIndex: 5,
   },
 ];
 
@@ -134,6 +140,13 @@ export default function Index() {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
+  };
+
+  const bookSpecialist = (scheduleIndex: number) => {
+    setSelectedSpec(scheduleIndex);
+    setTimeout(() => {
+      document.getElementById("schedule")?.scrollIntoView({ behavior: "smooth" });
+    }, 50);
   };
 
   return (
@@ -422,7 +435,14 @@ export default function Index() {
                   </div>
                   <div className="p-6">
                     <h3 className="font-black text-[#1A1A2E] text-base mb-2 leading-tight">{member.name}</h3>
-                    <p className="text-sm text-[#777] leading-relaxed">{member.role}</p>
+                    <p className="text-sm text-[#777] leading-relaxed mb-4">{member.role}</p>
+                    <button
+                      onClick={() => bookSpecialist(member.scheduleIndex)}
+                      className="w-full bg-[#E63030] text-white text-sm font-bold py-2.5 rounded-xl hover:bg-[#c72020] transition-all hover:scale-[1.02] active:scale-[0.98] shadow-sm shadow-red-200 flex items-center justify-center gap-2"
+                    >
+                      <Icon name="CalendarPlus" size={15} />
+                      Записаться
+                    </button>
                   </div>
                 </div>
               </FadeIn>
