@@ -156,6 +156,11 @@ export default function Index() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#F0EBE3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <button onClick={() => scrollTo("hero")} className="flex items-center gap-2">
+            <img
+              src="https://cdn.poehali.dev/projects/2198a176-23be-4989-9b88-56247940b077/bucket/5547419b-359b-4ece-8bcc-73064b50234d.jpeg"
+              alt="Логотип ЛОГОСтартУм"
+              className="h-10 w-10 object-contain"
+            />
             <span className="text-xl font-black tracking-tight">
               <span className="text-[#E63030]">ЛОГОСтартУм</span>
             </span>
