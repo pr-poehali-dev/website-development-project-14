@@ -272,7 +272,10 @@ export default function Index() {
           <FadeIn>
             <div className="relative">
               <img src={CLASS_IMG} alt="Занятия в центре" className="rounded-3xl shadow-2xl w-full h-80 md:h-[420px] object-cover" />
-              <div className="absolute -bottom-6 right-8 bg-white rounded-2xl shadow-xl p-5">
+              <button
+                onClick={() => scrollTo("schedule")}
+                className="absolute -bottom-6 right-8 bg-white rounded-2xl shadow-xl p-5 text-left hover:shadow-2xl hover:scale-[1.03] transition-all duration-300 cursor-pointer group"
+              >
                 <div className="flex items-center gap-3 mb-2">
                   <div className="flex -space-x-2">
                     {["🧒","👧","🧑"].map((e, i) => (
@@ -281,8 +284,11 @@ export default function Index() {
                   </div>
                   <div className="text-xs text-[#888]">Дети занимаются сейчас</div>
                 </div>
-                <div className="text-base font-black text-[#E63030]">Записывайтесь сегодня!</div>
-              </div>
+                <div className="text-base font-black text-[#E63030] flex items-center gap-1">
+                  Записывайтесь сегодня!
+                  <Icon name="ArrowRight" size={14} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </button>
             </div>
           </FadeIn>
           <FadeIn delay={150}>
@@ -632,7 +638,7 @@ export default function Index() {
           <FadeIn>
             <div className="flex flex-wrap justify-center gap-3">
               {[
-                { label: "WhatsApp", icon: "MessageCircle", color: "bg-green-600" },
+                { label: "MAX", icon: "MessageCircle", color: "bg-violet-600" },
                 { label: "Telegram", icon: "Send", color: "bg-sky-500" },
                 { label: "ВКонтакте", icon: "Users", color: "bg-indigo-600" },
               ].map(({ label, icon, color }) => (
