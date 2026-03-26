@@ -430,18 +430,18 @@ export default function Index() {
                     <img
                       src={member.img}
                       alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A2E]/60 to-transparent" />
-                    {member.badge && (
-                      <div className="absolute top-4 left-4 bg-[#E63030] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow">
-                        {member.badge}
-                      </div>
-                    )}
                   </div>
                   <div className="p-6">
                     <h3 className="font-black text-[#1A1A2E] text-base mb-2 leading-tight">{member.name}</h3>
-                    <p className="text-sm text-[#777] leading-relaxed mb-4">{member.role}</p>
+                    <p className="text-sm text-[#777] leading-relaxed mb-3">{member.role}</p>
+                    {member.badge && (
+                      <div className="inline-flex items-center bg-red-50 border border-red-100 text-[#E63030] text-xs font-bold px-3 py-1.5 rounded-full mb-3">
+                        {member.badge}
+                      </div>
+                    )}
                     <button
                       onClick={() => bookSpecialist(member.scheduleIndex)}
                       className="w-full bg-[#E63030] text-white text-sm font-bold py-2.5 rounded-xl hover:bg-[#c72020] transition-all hover:scale-[1.02] active:scale-[0.98] shadow-sm shadow-red-200 flex items-center justify-center gap-2"
