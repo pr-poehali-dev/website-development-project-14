@@ -65,7 +65,7 @@ const team = [
     name: "Чернуха Евгения Александровна",
     role: "Дифференциальный диагност, логопед-дефектолог высшей категории",
     badge: "★ Мастер коррекционной педагогики-2025",
-    img: TEAM_IMG,
+    img: "https://cdn.poehali.dev/projects/2198a176-23be-4989-9b88-56247940b077/bucket/57a256cd-24c8-4c31-bc35-85a900ac3ed0.jpeg",
     scheduleIndex: 0,
   },
   {
